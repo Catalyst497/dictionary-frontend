@@ -5,7 +5,7 @@ import SearchBar from "../components/SearchBar";
 import Body from "../components/Body";
 import { useSelector } from "react-redux";
 import useConstants from "/src/hooks/useConstants";
-import Login from "./login";
+import Login from "./Login";
 import Signup from "./Signup";
 
 function Home() {
