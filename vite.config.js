@@ -8,7 +8,7 @@ export default defineConfig({
   server:  {
     proxy: {
       '/api': {
-          target: 'https://dictionary-backend-ya1b.onrender.com',
+          target: 'https://dictionary-backend-ya1b.onrender.com/',
           changeOrigin: true,
           rewrite: (path) => path.replace(/^\/api/, ''),
       },

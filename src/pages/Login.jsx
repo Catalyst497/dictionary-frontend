@@ -22,7 +22,7 @@ function Login() {
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("/api/login", { username, password });
+      const res = await axios.post(`${import.meta.env.VITE_API_URL}/login`, { username, password });
       if (res.data?.message == "Successful Login") {
         localStorage.setItem("token", res.data?.token);
         setLoginErr(null);
