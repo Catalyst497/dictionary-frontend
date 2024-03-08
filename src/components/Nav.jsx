@@ -1,4 +1,3 @@
-import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
@@ -39,12 +38,6 @@ function Nav() {
       TweenMax.to(togglePill.current, 0.3, { left: "60%" });
     }
   }, [darkMode]);
-  useEffect(() => {
-    axios
-      .get("/api")
-      .then((res) => setBackText(res.data))
-      .catch((err) => console.log(err));
-  });
   const logout = (e) => {
     e.preventDefault();
     localStorage.removeItem("token");

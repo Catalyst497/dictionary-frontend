@@ -26,11 +26,11 @@ export default function HeartIcon() {
   }, [favourites, word]);
 
   const addWordToFav = async (e) => {
-    if (!logged) return navigate('/login')
+    if (logged !== true) return navigate('/login')
     try {
       if (!favourites.includes(word)) {
         if (logged) {
-          const res = await axios.put("/api/addtofavorites", {
+          const res = await axios.put("https://dictionary-backend-ya1b.onrender.com/addtofavorites", {
             word,
             userId: user._id,
           });
@@ -41,7 +41,7 @@ export default function HeartIcon() {
           } else console.log(res.data?.message);
         }
       } else {
-        const res = await axios.put("/api/removefromfavorites", {
+        const res = await axios.put("https://dictionary-backend-ya1b.onrender.com/removefromfavorites", {
           word,
           userId: user._id,
         });

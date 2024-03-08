@@ -52,7 +52,7 @@ export const fetchMeaning = createAsyncThunk(
 export const passHistory = (word, user) => {
   const sendCall = async (word, user) => {
     try {
-      const response = await axios.post("/api/user/set-history", {
+      const response = await axios.post("https://dictionary-backend-ya1b.onrender.com/user/set-history", {
         userId: user._id,
         word,
       });

@@ -21,7 +21,7 @@ function Signup() {
       username: username,
     };
     try {
-      const res = await axios.post("/api/register", credentials);
+      const res = await axios.post("https://dictionary-backend-ya1b.onrender.com/register", credentials);
       if (res.data?.message == "Sign up successful.") {
         console.log("Sign up success.");
         navigate("/login");

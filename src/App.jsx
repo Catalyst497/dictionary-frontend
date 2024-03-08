@@ -33,7 +33,7 @@ const App = () => {
   useEffect(() => {
     const checkAuthenticated = async () => {
       try {
-        const res = await axios.get("/api/protectedroute", {
+        const res = await axios.get("https://dictionary-backend-ya1b.onrender.com/protectedroute", {
           headers: {
             "x-access-token": localStorage.getItem("token"),
           },

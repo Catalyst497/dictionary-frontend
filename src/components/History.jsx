@@ -1,10 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import { TweenMax, TimelineMax } from "gsap";
+import { useNavigate } from "react-router-dom";
 
 function History() {
+  const navigate = useNavigate()
   const { history } = useSelector((st) => st.app);
-  const { darkMode, theme } = useSelector((st) => st.user);
+  const { darkMode, theme, logged } = useSelector((st) => st.user);
   const historyDropdown = useRef();
   const dropDownIcon = useRef();
   const mode = darkMode ? theme.dark : theme.light;
@@ -17,6 +19,7 @@ function History() {
     const menu = historyDropdown.current;
 
     if (dropOpen) {
+      if (logged !== true) navigate('/login') 
       const timeline = new TimelineMax();
       timeline.to(menu, { display: "block" });
       timeline.to(icon, {
