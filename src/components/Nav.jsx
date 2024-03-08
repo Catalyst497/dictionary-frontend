@@ -82,7 +82,7 @@ function Nav() {
   //     console.log("Clickout is actually called.");
   //     if (
   //       menuDropdown.current &&
-  //       !menuDropdown.current.contains(event.target)
+        // !menuDropdown.current.contains(event.target)
   //     ) {
   //       setMenuOpen(false);
   //     }
@@ -143,7 +143,7 @@ function Nav() {
           </div>
         ) : (
           <div className="options flex gap-4 items-center">
-            {logged ? (
+            {logged === true ? (
               <button
                 className={`bg-none border-solid border-[1px] px-4 py-2 rounded-[.5rem] ${
                   darkMode ? "border-white" : "border-[black]"

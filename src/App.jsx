@@ -43,7 +43,7 @@ const App = () => {
           localStorage.removeItem("token");
         } else {
           dispatch(setLogged(true));
-          dispatch(setUser(res.data?.user))
+          dispatch(setUser(res.data?.user));
         }
       } catch (err) {
         console.log(err);
@@ -52,16 +52,16 @@ const App = () => {
     checkAuthenticated();
   }, []);
   useEffect(() => {
-    console.log(user)
-    if(user) {
-      console.log(user?.history)
-      dispatch(setFavourites(user?.favorites))
-      dispatch(setHistory(user?.history))
+    console.log(user);
+    if (user) {
+      console.log(user?.history);
+      dispatch(setFavourites(user?.favorites));
+      dispatch(setHistory(user?.history));
     } else {
-      dispatch(setFavourites([]))
-      dispatch(setHistory([]))
+      dispatch(setFavourites([]));
+      dispatch(setHistory([]));
     }
-  }, [user])
+  }, [user]);
   const CheckLoggedIn = ({ children }) => {
     if (logged == "loading") {
       <LoadingPage />;
