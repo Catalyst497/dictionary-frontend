@@ -21,8 +21,6 @@ function MenuMobile({
   const mode = darkMode ? theme.dark : theme.light;
   const purple = "hsl(275, 80%, 56%)";
 
- 
-
   const dropDownAnimate = () => {
     const menu = menuDropdown.current;
     if (menuOpen) {
@@ -117,9 +115,9 @@ function MenuMobile({
           className={`bg-none border-solid border-[1px] px-4 py-1 mb-2 rounded-[.5rem] ${
             darkMode ? "border-white" : "border-[black]"
           }`}
-          onClick={logged ? logout : login}
+          onClick={logged === true ? logout : login}
         >
-          {logged ? "Logout" : "Login"}
+          {logged === true ? "Logout" : "Login"}
         </li>
         <ChangeFonts />
         <li className="py-1 flex gap-2">
